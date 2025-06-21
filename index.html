@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inlighn Tech - Immersive Tech Internship Programs</title>
+    <meta name="description" content="Join our immersive internship programs in Cybersecurity, Full Stack Development, Data Science, and Data Analysis">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20C10 14.4772 14.4772 10 20 10H40C45.5228 10 50 14.4772 50 20V30C50 35.5228 45.5228 40 40 40H20C14.4772 40 10 35.5228 10 30V20Z" fill="#3A0CA3"/>
+                    <path d="M70 20C70 14.4772 74.4772 10 80 10H100C105.523 10 110 14.4772 110 20V30C110 35.5228 105.523 40 100 40H80C74.4772 40 70 35.5228 70 30V20Z" fill="#4CC9F0"/>
+                </svg>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="container">
+            <a href="/" class="logo">
+                <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20C10 14.4772 14.4772 10 20 10H40C45.5228 10 50 14.4772 50 20V30C50 35.5228 45.5228 40 40 40H20C14.4772 40 10 35.5228 10 30V20Z" fill="#3A0CA3"/>
+                    <path d="M70 20C70 14.4772 74.4772 10 80 10H100C105.523 10 110 14.4772 110 20V30C110 35.5228 105.523 40 100 40H80C74.4772 40 70 35.5228 70 30V20Z" fill="#4CC9F0"/>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#verify">Verify</a>
+                <a href="#contact">Contact</a>
+                <div class="nav-actions">
+                    <button class="btn btn-outline">Login</button>
+                    <button class="btn btn-primary">Apply Now</button>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="video-background">
+            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-coding-on-computer-while-seated-on-her-bed-3982-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title" data-splitting>
+                    <span class="title-line">Transform Your</span>
+                    <span class="title-line">Tech Career</span>
+                </h1>
+                <p class="hero-subtitle">Immersive internships that bridge academia and industry</p>
+                
+                <div class="hero-actions">
+                    <a href="#programs" class="btn btn-primary btn-lg btn-magnetic">
+                        <span>Explore Programs</span>
+                        <div class="magnetic-area"></div>
+                    </a>
+                    <a href="#about" class="btn btn-outline btn-lg btn-magnetic">
+                        <span>How It Works</span>
+                        <div class="magnetic-area"></div>
+                    </a>
+                </div>
+                
+                <!-- Animated scroll indicator -->
+                <div class="scroll-hint">
+                    <svg class="arrows">
+                        <path class="a1" d="M0 0 L15 15 L30 0"></path>
+                        <path class="a2" d="M0 10 L15 25 L30 10"></path>
+                        <path class="a3" d="M0 20 L15 35 L30 20"></path>
+                    </svg>
+                    <span>Scroll to explore</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose <span class="text-gradient">Inlighn Tech</span>?</h2>
+                <p class="section-subtitle">We bridge the gap between academic learning and industry requirements</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="card-title">Industry-Relevant Curriculum</h3>
+                    <p class="card-text">Our programs are designed with direct input from tech industry leaders.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="card-title">Expert Mentors</h3>
+                    <p class="card-text">Learn from professionals with real-world experience in top tech companies.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="card-title">Hands-on Projects</h3>
+                    <p class="card-text">Work on real projects that you can showcase in your portfolio.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="card-title">Career Support</h3>
+                    <p class="card-text">Get help with resume building, interview prep, and job placement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="text-gradient">Internship</span> Programs</h2>
+                <p class="section-subtitle">Hands-on experience with cutting-edge technologies</p>
+            </div>
+            
+            <div class="programs-grid">
+                <!-- Cybersecurity Card -->
+                <div class="program-card" data-program="cybersecurity">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-overlay"></div>
+                        <div class="card-badge">Most Popular</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <img src="https://img.icons8.com/color/96/000000/cyber-security.png" alt="Cybersecurity">
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Master defensive and offensive security techniques with real-world simulations</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Ethical Hacking</li>
+                            <li><i class="fas fa-check-circle"></i> Network Security</li>
+                            <li><i class="fas fa-check-circle"></i> Penetration Testing</li>
+                        </ul>
+                        <a href="#" class="card-link">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Full Stack Development Card -->
+                <div class="program-card" data-program="fullstack">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <img src="https://img.icons8.com/color/96/000000/code.png" alt="Full Stack">
+                        </div>
+                        <h3>Full Stack Development</h3>
+                        <p>Build complete web applications from frontend to backend</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> React & Node.js</li>
+                            <li><i class="fas fa-check-circle"></i> Database Design</li>
+                            <li><i class="fas fa-check-circle"></i> API Development</li>
+                        </ul>
+                        <a href="#" class="card-link">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Data Science Card -->
+                <div class="program-card" data-program="datascience">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <img src="https://img.icons8.com/color/96/000000/data-configuration.png" alt="Data Science">
+                        </div>
+                        <h3>Data Science</h3>
+                        <p>Extract insights from complex data using machine learning and statistics</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> Machine Learning</li>
+                            <li><i class="fas fa-check-circle"></i> Data Visualization</li>
+                            <li><i class="fas fa-check-circle"></i> Statistical Analysis</li>
+                        </ul>
+                        <a href="#" class="card-link">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Data Analysis Card -->
+                <div class="program-card" data-program="dataanalysis">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <img src="https://img.icons8.com/color/96/000000/data-analysis.png" alt="Data Analysis">
+                        </div>
+                        <h3>Data Analysis</h3>
+                        <p>Turn raw data into actionable business insights</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check-circle"></i> SQL & Python</li>
+                            <li><i class="fas fa-check-circle"></i> Data Wrangling</li>
+                            <li><i class="fas fa-check-circle"></i> Business Intelligence</li>
+                        </ul>
+                        <a href="#" class="card-link">
+                            <span>Learn more</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our <span class="text-gradient">Alumni</span> Say</h2>
+                <p class="section-subtitle">Hear from graduates who transformed their careers</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>The cybersecurity program gave me hands-on experience that was directly applicable to my current role at a Fortune 500 company.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Sarah Johnson</h4>
+                            <p>Security Analyst at TechSecure</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>I went from zero coding experience to landing a full-stack developer job in just 6 months thanks to Inlighn Tech's program.</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Michael Chen</h4>
+                            <p>Full Stack Developer at WebCraft</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Verification -->
+    <section class="verify-section" id="verify">
+        <div class="container">
+            <div class="verify-container">
+                <div class="verify-content">
+                    <h2 class="section-title">Verify <span class="text-gradient">Certificate</span></h2>
+                    <p class="section-subtitle">Check the authenticity of an Inlighn Tech certificate</p>
+                    <form class="verify-form">
+                        <div class="form-group">
+                            <input type="text" id="certificate-id" placeholder="Enter Certificate ID" required>
+                            <button type="submit" class="btn btn-primary">Verify</button>
+                        </div>
+                    </form>
+                    <div class="verify-result">
+                        <div class="result-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <p class="result-message">Enter a certificate ID to verify</p>
+                    </div>
+                </div>
+                <div class="verify-visual">
+                    <img src="https://marketplace.canva.com/EAFy42rCTA0/1/0/1600w/canva-blue-minimalist-certificate-of-achievement-_asVJz8YgJE.jpg" alt="Certificate Example" class="certificate-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p>contact@inlighntech.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Call Us</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Visit Us</h3>
+                            <p>123 Tech Park, Silicon Valley, CA 94025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="" disabled selected>Select Program</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="fullstack">Full Stack Development</option>
+                                <option value="datascience">Data Science</option>
+                                <option value="dataanalysis">Data Analysis</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20C10 14.4772 14.4772 10 20 10H40C45.5228 10 50 14.4772 50 20V30C50 35.5228 45.5228 40 40 40H20C14.4772 40 10 35.5228 10 30V20Z" fill="#3A0CA3"/>
+                            <path d="M70 20C70 14.4772 74.4772 10 80 10H100C105.523 10 110 14.4772 110 20V30C110 35.5228 105.523 40 100 40H80C74.4772 40 70 35.5228 70 30V20Z" fill="#4CC9F0"/>
+                        </svg>
+                    </div>
+                    <p class="footer-about">Inlighn Tech provides immersive internship programs to bridge the gap between academic learning and industry requirements.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">Full Stack Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Data Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Inlighn Tech. All rights reserved.</p>
+                <div class="footer-actions">
+                    <a href="#" class="btn btn-outline btn-sm">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
