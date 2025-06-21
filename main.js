@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initVerifyForm();
     initVideoBackground();
     initTextAnimation();
+    initThemeSwitcher();
+    initProgramComparison();
+    initProgramVisualization();
+    initFormInteractions();
+    initLazyLoading();
+    initMotionPreferences();
 });
 
 // Preloader
@@ -322,4 +328,272 @@ function initTextAnimation() {
             });
         }
     }
+}
+
+// Theme Switcher
+function initThemeSwitcher() {
+    const themeBtns = document.querySelectorAll('.theme-btn');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if(localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+        document.documentElement.classList.add('dark-theme');
+    }
+    
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            if(this.classList.contains('light')) {
+                document.documentElement.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    });
+}
+
+// Program Comparison
+function initProgramComparison() {
+    const program1Select = document.getElementById('compare-program-1');
+    const program2Select = document.getElementById('compare-program-2');
+    const comparisonResults = document.querySelector('.comparison-results');
+    
+    if (!program1Select || !program2Select || !comparisonResults) return;
+    
+    const programData = {
+        cybersecurity: {
+            duration: '12 weeks',
+            difficulty: 'Advanced',
+            skills: ['Ethical Hacking', 'Network Security', 'Pen Testing'],
+            projects: 5,
+            hours: '20-25/week'
+        },
+        fullstack: {
+            duration: '10 weeks',
+            difficulty: 'Intermediate',
+            skills: ['React', 'Node.js', 'Database Design'],
+            projects: 4,
+            hours: '15-20/week'
+        },
+        datascience: {
+            duration: '14 weeks',
+            difficulty: 'Advanced',
+            skills: ['Machine Learning', 'Data Visualization', 'Statistical Analysis'],
+            projects: 6,
+            hours: '20-25/week'
+        },
+        dataanalysis: {
+            duration: '8 weeks',
+            difficulty: 'Beginner',
+            skills: ['SQL', 'Python', 'Business Intelligence'],
+            projects: 3,
+            hours: '10-15/week'
+        }
+    };
+    
+    function updateComparison() {
+        const program1 = program1Select.value;
+        const program2 = program2Select.value;
+        
+        if (program1 && program2) {
+            const p1 = programData[program1];
+            const p2 = programData[program2];
+            
+            let html = `
+                <div class="comparison-grid">
+                    <div class="comparison-feature">Feature</div>
+                    <div class="comparison-program">${program1.charAt(0).toUpperCase() + program1.slice(1)}</div>
+                    <div class="comparison-program">${program2.charAt(0).toUpperCase() + program2.slice(1)}</div>
+                    
+                    <div class="comparison-feature">Duration</div>
+                    <div>${p1.duration}</div>
+                    <div>${p2.duration}</div>
+                    
+                    <div class="comparison-feature">Difficulty</div>
+                    <div>${p1.difficulty}</div>
+                    <div>${p2.difficulty}</div>
+                    
+                    <div class="comparison-feature">Key Skills</div>
+                    <div><ul>${p1.skills.map(skill => `<li>${skill}</li>`).join('')}</ul></div>
+                    <div><ul>${p2.skills.map(skill => `<li>${skill}</li>`).join('')}</ul></div>
+                    
+                    <div class="comparison-feature">Projects</div>
+                    <div>${p1.projects}</div>
+                    <div>${p2.projects}</div>
+                    
+                    <div class="comparison-feature">Time Commitment</div>
+                    <div>${p1.hours}</div>
+                    <div>${p2.hours}</div>
+                </div>
+            `;
+            
+            comparisonResults.innerHTML = html;
+        } else {
+            comparisonResults.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-exchange-alt"></i>
+                    <p>Select two programs to compare</p>
+                </div>
+            `;
+        }
+    }
+    
+    program1Select.addEventListener('change', updateComparison);
+    program2Select.addEventListener('change', updateComparison);
+    
+    // Initialize empty state
+    updateComparison();
+}
+
+// Program Visualization
+function initProgramVisualization() {
+    const canvas = document.getElementById('program-3d');
+    
+    if (!canvas) return;
+    
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+        canvas, 
+        antialias: true,
+        alpha: true
+    });
+    
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    
+    // Create program-specific 3D objects
+    const geometry = new THREE.IcosahedronGeometry(2, 1);
+    const material = new THREE.MeshPhongMaterial({ 
+        color: 0x3a0ca3,
+        emissive: 0x4cc9f0,
+        specular: 0xffffff,
+        shininess: 30,
+        wireframe: false 
+    });
+    
+    const programMesh = new THREE.Mesh(geometry, material);
+    scene.add(programMesh);
+    
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+    
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+    
+    camera.position.z = 5;
+    
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        programMesh.rotation.x += 0.005;
+        programMesh.rotation.y += 0.005;
+        renderer.render(scene, camera);
+    }
+    
+    animate();
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    });
+    
+    // Interactive controls
+    document.querySelectorAll('.control-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const action = this.dataset.action;
+            if(action === 'rotate') {
+                gsap.to(programMesh.rotation, { 
+                    y: programMesh.rotation.y + Math.PI*2, 
+                    duration: 3,
+                    ease: "power2.inOut"
+                });
+            } else if(action === 'zoom') {
+                gsap.to(camera.position, { 
+                    z: camera.position.z === 5 ? 3 : 5, 
+                    duration: 1,
+                    ease: "power2.inOut"
+                });
+            }
+        });
+    });
+}
+
+// Form Interactions
+function initFormInteractions() {
+    const inputs = document.querySelectorAll('input, textarea, select');
+    
+    inputs.forEach(input => {
+        const parent = input.parentElement;
+        
+        input.addEventListener('focus', function() {
+            parent.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            if(this.value === '') {
+                parent.classList.remove('focused');
+            }
+        });
+        
+        // Add floating label effect
+        if(input.value !== '') {
+            parent.classList.add('focused');
+        }
+    });
+}
+
+// Lazy Loading
+function initLazyLoading() {
+    const lazyElements = document.querySelectorAll('[data-src], [data-background]');
+    
+    if (!lazyElements.length) return;
+    
+    const lazyObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                const element = entry.target;
+                
+                if(element.dataset.src) {
+                    element.src = element.dataset.src;
+                    element.removeAttribute('data-src');
+                }
+                
+                if(element.dataset.background) {
+                    element.style.backgroundImage = `url(${element.dataset.background})`;
+                    element.removeAttribute('data-background');
+                }
+                
+                observer.unobserve(element);
+            }
+        });
+    }, { rootMargin: '200px' });
+    
+    lazyElements.forEach(element => {
+        lazyObserver.observe(element);
+    });
+}
+
+// Reduced Motion Preference
+function initMotionPreferences() {
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
+    if(motionQuery.matches) {
+        gsap.globalTimeline.timeScale(0.5);
+        document.documentElement.style.setProperty('--transition', 'all 0.2s ease');
+    }
+    
+    motionQuery.addEventListener('change', () => {
+        if(motionQuery.matches) {
+            gsap.globalTimeline.timeScale(0.5);
+            document.documentElement.style.setProperty('--transition', 'all 0.2s ease');
+        } else {
+            gsap.globalTimeline.timeScale(1);
+            document.documentElement.style.setProperty('--transition', 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)');
+        }
+    });
 }
